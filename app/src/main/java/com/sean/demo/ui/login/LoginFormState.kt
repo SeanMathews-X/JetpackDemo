@@ -1,4 +1,4 @@
-package com.sean.demo.login.ui.login
+package com.sean.demo.ui.login
 
 /**
  * Data validation state of the login form.

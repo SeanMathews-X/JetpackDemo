@@ -1,6 +1,7 @@
-package com.sean.demo.login.data
+package com.sean.demo.data
 
-import com.sean.demo.login.data.model.LoggedInUser
+import com.sean.demo.data.model.LoggedInUser
+import com.sean.library.network.Result
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -27,15 +28,16 @@ class LoginRepository(val dataSource: LoginDataSource) {
         dataSource.logout()
     }
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
-        // handle login
-        val result = dataSource.login(username, password)
-
-        if (result is Result.Success) {
-            setLoggedInUser(result.data)
+    suspend fun login(username: String, password: String): Result<LoggedInUser> {
+        return try {
+            val result = dataSource.login(username, password)
+            if (result is Result.Success) {
+                setLoggedInUser(result.data)
+            }
+            result
+        } catch (e: Exception) {
+            Result.Error(e)
         }
-
-        return result
     }
 
     private fun setLoggedInUser(loggedInUser: LoggedInUser) {

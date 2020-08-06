@@ -1,9 +1,9 @@
-package com.sean.demo.login.ui.login
+package com.sean.demo.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.sean.demo.login.data.LoginDataSource
-import com.sean.demo.login.data.LoginRepository
+import com.sean.demo.data.LoginDataSource
+import com.sean.demo.data.LoginRepository
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

@@ -1,4 +1,4 @@
-package com.sean.demo.login.ui.login
+package com.sean.demo.ui.login
 
 /**
  * User details post authentication that is exposed to the UI

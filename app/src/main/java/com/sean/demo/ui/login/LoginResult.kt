@@ -1,4 +1,4 @@
-package com.sean.demo.login.ui.login
+package com.sean.demo.ui.login
 
 /**
  * Authentication result : success (user details) or error message.

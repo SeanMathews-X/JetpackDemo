@@ -9,5 +9,3 @@ package com.sean.library.exts
  * @description:
  *      Retrofit's ext fun
  */
-
-class A
