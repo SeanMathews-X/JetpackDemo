@@ -7,13 +7,19 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.sean.demo.R
+import com.sean.library.exts.clickFirst
+import com.sean.library.exts.gone
+import com.sean.library.exts.invisible
+import com.sean.library.exts.visible
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.coroutines.launch
 
@@ -87,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
                 false
             }
 
-            login.setOnClickListener {
+            login.clickFirst {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }

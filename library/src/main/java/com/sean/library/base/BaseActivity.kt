@@ -22,12 +22,12 @@ open class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompatActi
         ?: throw Exception("please set layout by @BindLayout(R.layout.xxx)")
 
     /**
-     * if use java,you can use view by[binding].viewId
+     * binding
      */
     protected lateinit var binding: B
 
     /**
-     *
+     * viewmodel
      */
     protected lateinit var vm: VM
 
